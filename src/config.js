@@ -1,0 +1,1 @@
+export const PAYMENT_API_URL = 'https://pay.amah.ai';

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transacash</title>
+  <link rel="stylesheet" href="https://pay.amah.ai/public/dist/libraries/bootstrap-5.0.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700&display=swap">
+  <link rel="shortcut icon" href="https://pay.amah.ai/public/uploads/logos/1708590399_favicon.png"/>
+</head>
+<body class="bg-body-muted">
+  <div class="container-fluid container-layout px-0">
+    <div class="section-payment">
+      <div class="payment-main-module">
+        <div class="payment-header">
+          <h3>You're almost there!</h3>
+          <p>Select an amount and complete your payment securely.</p>
+        </div>
+        
+        <div id="error-message" class="alert alert-danger d-none" role="alert"></div>
+        
+        <div class="amount-selector mb-4">
+          <div class="amount-grid">
+            <button class="amount-btn" data-amount="10">$10</button>
+            <button class="amount-btn" data-amount="20">$20</button>
+            <button class="amount-btn" data-amount="50">$50</button>
+            <button class="amount-btn" data-amount="100">$100</button>
+          </div>
+        </div>
+
+        <form id="paymentForm" method="POST" action="https://pay.amah.ai/payment/form">
+          <input type="hidden" name="merchant" value="0C7D41D1170FA">
+          <input type="hidden" name="merchant_id" value="2">
+          <input type="hidden" name="item_name" value="Payment">
+          <input type="hidden" name="currency_id" value="1">
+          <input type="hidden" name="order" value="1">
+          <input type="hidden" id="amount" name="amount" value="10">
+          <input type="hidden" name="custom" value="Standard payment">
+          
+          <button type="submit" class="btn btn-lg btn-primary w-100">
+            <strong>Pay Now</strong>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://pay.amah.ai/public/dist/libraries/jquery-3.6.1/jquery-3.6.1.min.js"></script>
+  <script src="https://pay.amah.ai/public/dist/libraries/bootstrap-5.0.2/js/bootstrap.min.js"></script>
+  <script src="src/js/main.js" type="module"></script>
+</body>
+</html>
